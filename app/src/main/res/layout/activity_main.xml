@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity=""
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="369dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            app:srcCompat="@drawable/icon" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nome"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/txtnome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="Digite seu nome"
+            android:padding="16dp"
+            android:textSize="14dp"
+            tools:ignore="TextSizeCheck" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/txtlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="digite_seu_login"
+            android:padding="16dp"
+            android:textSize="14dp"
+            tools:ignore="TextSizeCheck" />
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E_mail"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/txtemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="digite_seu_email"
+            android:padding="16dp"
+            android:textSize="14dp"
+            tools:ignore="TextSizeCheck" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Senha"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="* * * * * * *"
+            android:padding="16dp"
+            android:textSize="14dp"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/btn_salvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="salvar"
+            android:text="S A L V A R"
+            android:textColor="@color/color_default" />
+
+
+    </LinearLayout>
+
+</ScrollView>
