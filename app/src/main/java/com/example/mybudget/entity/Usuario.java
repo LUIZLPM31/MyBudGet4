@@ -7,6 +7,12 @@ public class Usuario {
     private String email;
     private String login;
     private String senha;
+
+    @Override
+    public String toString() {
+        return String.format("Usuario [id=%d, nome=%s, email=%s, login=%s, senha=%s]",
+                id, nome, email, login, senha);
+    }
     
     public Integer getId() {
         return id;
@@ -35,12 +41,15 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public void setEmail(String string) {
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setLogin(String string) {
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public void setSenha(String string) {
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }

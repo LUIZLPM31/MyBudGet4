@@ -4,109 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="@color/color_default">
 
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity=""
-        android:padding="16dp">
+        android:padding="16dp"
+        tools:ignore="ScrollViewSize">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="369dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
-            android:gravity="center"
+            android:adjustViewBounds="true"
+            android:contentDescription="Ícone do aplicativo"
             app:srcCompat="@drawable/icon" />
 
-
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Nome"
-            android:textColor="@color/white"/>
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/txtnome"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_edit"
             android:hint="Digite seu nome"
+            android:inputType="textPersonName"
+            android:maxLength="50"
             android:padding="16dp"
-            android:textSize="14dp"
+            android:textColor="#000000"
+            android:textColorHighlight="#FDFAFA"
+            android:textColorLink="#C53607"
+            android:textSize="16sp"
             tools:ignore="TextSizeCheck" />
 
-
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Login"
             android:layout_marginTop="16dp"
-            android:textColor="@color/white"/>
+            android:text="Login"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/txtlogin"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_edit"
-            android:hint="digite_seu_login"
+            android:hint="Digite seu login"
+            android:inputType="textPersonName"
+            android:maxLength="50"
             android:padding="16dp"
-            android:textSize="14dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
             tools:ignore="TextSizeCheck" />
 
-
-
-
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="E_mail"
-            android:textColor="@color/white"/>
+            android:layout_marginTop="16dp"
+            android:text="E-mail"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/txtemail"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_edit"
-            android:hint="digite_seu_email"
+            android:hint="Digite seu e-mail"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
             android:padding="16dp"
-            android:textSize="14dp"
+            android:textColor="#070707"
+            android:textSize="16sp"
             tools:ignore="TextSizeCheck" />
 
-
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Senha"
-            android:textColor="@color/white"/>
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/senha"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_edit"
-            android:hint="* * * * * * *"
+            android:hint="Digite sua senha"
+            android:inputType="textPassword"
+            android:maxLength="50"
             android:padding="16dp"
-            android:textSize="14dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
             tools:ignore="TextSizeCheck" />
 
         <Button
             android:id="@+id/btn_salvar"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@drawable/bg_edit"
+            android:contentDescription="Botão para salvar os dados"
             android:onClick="salvar"
-            android:text="S A L V A R"
-            android:textColor="@color/color_default" />
+            android:text="Salvar"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/color_default"
+            android:textSize="16sp" />
 
+        <Button
+            android:id="@+id/segundatela"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="60dp"
+            android:backgroundTint="@color/white"
+            android:onClick="abrirLista"
+            android:text="Lista"
+            android:background="@drawable/bg_edit"
+            android:textSize="16sp"
+            android:textColor="@color/color_default"/>
 
     </LinearLayout>
+
 
 </ScrollView>

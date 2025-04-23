@@ -10,9 +10,14 @@ public class Conexao extends SQLiteOpenHelper{
 
 
     public static  SQLiteDatabase instance;
+    private static Context context;
 
 
     public static SQLiteDatabase getInstance() {
+        if (instance == null || !instance.isOpen()) {
+            Conexao.context = context;
+            instance = new Conexao(context, "mybudget.db", null, 1).getWritableDatabase();
+        }
         return instance;
     }
 
@@ -28,24 +33,25 @@ public class Conexao extends SQLiteOpenHelper{
     }
 
 
+
+
     public void onCreate(SQLiteDatabase db) {
-
-        String tabelaUsuario = "";
-        tabelaUsuario += "CREATE TABLE IF NOT EXISTS usuario (";
-        tabelaUsuario += "id INTEGER PRIMARY KEY AUTOINCREMENT,";
-        tabelaUsuario += "nome VARCHAR(100) NOT NULL,";
-        tabelaUsuario += "email VARCHAR(100) NOT NULL,";
-        tabelaUsuario += "login VARCHAR(100) NOT NULL,";
-        tabelaUsuario += "senha VARCHAR(100) NOT NULL";
-        tabelaUsuario += ")";
-
-        db.execSQL(tabelaUsuario);
-
-
+        try {
+            String tabelaUsuario = "CREATE TABLE IF NOT EXISTS usuario (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "nome VARCHAR(100) NOT NULL," +
+                    "email VARCHAR(100) NOT NULL," +
+                    "login VARCHAR(100) NOT NULL," +
+                    "senha VARCHAR(100) NOT NULL)";
+            db.execSQL(tabelaUsuario);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS usuario");
+        onCreate(db);
     }
 }
