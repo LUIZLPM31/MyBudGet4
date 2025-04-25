@@ -5,20 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/task_24"
-        tools:ignore="MissingConstraints" />
-
-    </LinearLayout>
+    tools:context=".SplashActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
