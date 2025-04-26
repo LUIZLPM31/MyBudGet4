@@ -1,5 +1,9 @@
 package com.example.mybudget.entity;
 
+import android.annotation.SuppressLint;
+
+import androidx.annotation.NonNull;
+
 public class Usuario {
     
     private Integer id;
@@ -8,9 +12,15 @@ public class Usuario {
     private String login;
     private String senha;
 
+    @NonNull
+    @SuppressLint("DefaultLocale")
     @Override
     public String toString() {
-        return String.format("Usuario [id=%d, nome=%s, email=%s, login=%s, senha=%s]",
+        return String.format("USUARIO [id=%d," +
+                        " NOME=%s," +
+                        " E-MAIL=%s," +
+                        " LOGIN=%s," +
+                        " SENHA=%s]",
                 id, nome, email, login, senha);
     }
     

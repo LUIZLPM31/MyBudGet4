@@ -4,31 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@color/color_default">
 
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
+        android:layout_height="200dp"
         android:orientation="vertical"
-        android:padding="16dp"
-        tools:ignore="ScrollViewSize">
+        android:gravity="center"
+        android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="Ícone do aplicativo"
-            app:srcCompat="@drawable/icon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:text="Cadastro de usuarios"
+            android:textColor="@color/color_primary"
+            android:textSize="34dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Nome"
-            android:textColor="?attr/colorOnBackground"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <EditText
@@ -41,18 +43,17 @@
             android:inputType="textPersonName"
             android:maxLength="50"
             android:padding="16dp"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textColorHighlight="#FDFAFA"
             android:textColorLink="#C53607"
-            android:textSize="16sp"
-            tools:ignore="TextSizeCheck" />
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Login"
-            android:textColor="?attr/colorOnBackground"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <EditText
@@ -66,15 +67,14 @@
             android:maxLength="50"
             android:padding="16dp"
             android:textColor="#000000"
-            android:textSize="16sp"
-            tools:ignore="TextSizeCheck" />
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="E-mail"
-            android:textColor="?attr/colorOnBackground"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <EditText
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Senha"
-            android:textColor="?attr/colorOnBackground"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <EditText
@@ -118,26 +118,27 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_edit"
+            android:background="@drawable/bg_button"
             android:contentDescription="Botão para salvar os dados"
             android:onClick="salvar"
             android:text="Salvar"
-            android:backgroundTint="@color/white"
+            app:backgroundTint="@null"
             android:textColor="@color/color_default"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/segundatela"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_gravity="end|bottom"
-            android:layout_margin="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_button"
             android:backgroundTint="@color/white"
             android:onClick="abrirLista"
             android:text="Lista"
-            android:background="@drawable/bg_edit"
+            android:textColor="@color/color_default"
             android:textSize="16sp"
-            android:textColor="@color/color_default"/>
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 

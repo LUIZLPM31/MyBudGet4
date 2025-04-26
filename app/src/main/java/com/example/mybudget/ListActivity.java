@@ -17,6 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.mybudget.dao.Usuariodao;
 import com.example.mybudget.entity.Usuario;
 
+import java.util.List;
+
 public class ListActivity extends AppCompatActivity {
 
     @Override
@@ -33,7 +35,7 @@ public class ListActivity extends AppCompatActivity {
         ListView listviewusuario = findViewById(R.id.listviewusuario);
 
         Usuariodao usuariodao = new Usuariodao();
-        java.util.List<Usuario> usuarios = usuariodao.listar();
+        List<Usuario> usuarios = usuariodao.listar();
 
         ArrayAdapter<Usuario> arrayAdapterUsuario =
                 new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, usuarios);
@@ -44,15 +46,23 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Usuario usuario = (Usuario) parent.getItemAtPosition(position);
-                usuariodao.atualizar(usuario);
-                Toast.makeText(getApplicationContext(), "Usuário atualizado com sucesso", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Usuário selecionado: " + usuario.getNome(), Toast.LENGTH_SHORT).show();
 
-                // aqui
-               
+                // Envia os dados do usuário para a AlterarActivity
+                Intent intent = new Intent(ListActivity.this, AlterarActivity.class);
+                intent.putExtra("id", usuario.getId());
+                intent.putExtra("nome", usuario.getNome());
+                intent.putExtra("email", usuario.getEmail());
+                intent.putExtra("login", usuario.getLogin());
+                intent.putExtra("senha", usuario.getSenha());
+                startActivity(intent);
 
-               
+
             }
+
+
         });
+        // Excluir usuário
 
         listviewusuario.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -60,6 +70,15 @@ public class ListActivity extends AppCompatActivity {
                 Usuario usuario = (Usuario) parent.getItemAtPosition(position);
                 usuariodao.excluir(usuario);
                 Toast.makeText(getApplicationContext(), "Usuário excluído com sucesso", Toast.LENGTH_SHORT).show();
+                // Recarrega os dados da lista
+                Usuariodao usuariodao = new Usuariodao();
+                List<Usuario> usuarios = usuariodao.listar();
+                ArrayAdapter<Usuario> arrayAdapterUsuario =
+                        new ArrayAdapter<>(ListActivity.this, android.R.layout.simple_list_item_1, usuarios);
+                ListView listviewusuario = findViewById(R.id.listviewusuario);
+                listviewusuario.setAdapter(arrayAdapterUsuario);
+                // Atualiza a lista
+                arrayAdapterUsuario.notifyDataSetChanged();
 
                 usuarios.clear();
                 usuarios.addAll(usuariodao.listar());
@@ -67,6 +86,21 @@ public class ListActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Recarrega os dados da lista
+        Usuariodao usuariodao = new Usuariodao();
+        List<Usuario> usuarios = usuariodao.listar();
+
+        ArrayAdapter<Usuario> arrayAdapterUsuario =
+                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, usuarios);
+
+        ListView listviewusuario = findViewById(R.id.listviewusuario);
+        listviewusuario.setAdapter(arrayAdapterUsuario);
     }
 
     public void abrirLista(View view) {

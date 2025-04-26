@@ -5,6 +5,135 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_primary"
+    android:onClick="Alterar"
     tools:context=".AlterarActivity">
+
+    <LinearLayout
+        android:id="@+id/main2"
+        android:layout_width="match_parent"
+        android:layout_height="730dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:text="Update usuarios"
+            android:textColor="@color/white"
+            android:textSize="34dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nome"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtnome"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="Digite seu nome"
+            android:inputType="textPersonName"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textColorHighlight="#FDFAFA"
+            android:textColorLink="#C53607"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtlogin"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="Digite seu login"
+            android:inputType="textPersonName"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="E-mail"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtemail"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="Digite seu e-mail"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:textColor="#070707"
+            android:textSize="16sp"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Senha"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/senha"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit"
+            android:hint="Digite sua senha"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:ignore="TextSizeCheck" />
+
+        <Button
+            android:id="@+id/btn_alterar"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_button2"
+            android:contentDescription="Botão para salvar os dados"
+            android:onClick="Alterar"
+            android:text="Atualizar"
+            android:textColor="@color/color_primary"
+            android:textSize="18dp"
+            app:backgroundTint="@null" />
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
