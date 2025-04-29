@@ -16,8 +16,14 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/color_primary"
+        android:shadowColor="#36205B"
         android:text="MyBudget"
         android:textColor="@color/white"
+        android:textColorHighlight="@color/color_primary"
+        android:textColorHint="@color/color_primary"
+        android:textColorLink="@color/color_primary"
+        android:textCursorDrawable="@drawable/bg_button2"
         android:textSize="70dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +38,7 @@
         android:layout_gravity="center"
 
 
-        android:src="@drawable/icon2"
+        android:src="@drawable/icon3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

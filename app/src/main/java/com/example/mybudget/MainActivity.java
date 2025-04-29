@@ -50,12 +50,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "A senha não pode conter espaços", Toast.LENGTH_SHORT).show();
             return;
         }
-
-
-        if (!senha.getText().toString().matches(".*[a-z].*")) {
-            Toast.makeText(this, "A senha deve conter pelo menos uma letra minúscula", Toast.LENGTH_SHORT).show();
+        if (!senha.getText().toString().matches(".*[A-Z].*")) {
+            Toast.makeText(this, "A senha deve conter pelo menos uma letra maiúscula", Toast.LENGTH_SHORT).show();
             return;
         }
+
 
 
         Usuario usuario = new Usuario();
